@@ -1,12 +1,13 @@
 const axios = require("axios");
 const { readFile } = require("fs/promises");
+const monent = require("moment");
 
 
 (async () => {
   try {
     // 根據變數去抓取資料
     let stockNo = await resdFile ("stocl.txt", "utf-8");
-    let queryDate = "20220115";
+    let queryDate = moment().format("YYYYMMDD"); //自動套用今天的時間
 
     // let response = await axios.get(
     //   `https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=${queryDate}&stockNo=${stockNo}`
